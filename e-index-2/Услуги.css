@@ -1,3 +1,10 @@
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  gap: 20px; /* расстояние между ячейками */
+  margin-bottom: 20px;
+}
+ 
  .u-section-1 {
   min-height: 943px;
 }
@@ -1309,13 +1316,22 @@ label {
     margin: 20px 0;
     font-family: Cormorant;
 }
+.f_prom_results {
+    background: transparent;
+    border: none;
+    font-size: 35px; /* Увеличенный размер */
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center; /* Текст по центру внутри поля */
+    outline: none;
+    margin: 50px 50px;
+    font-family: Cormorant;
+}
 .result_output {
-  background-color: white;
+  background-color: #191e37;
   border: none;
-  color: black;
   font-size: 30px;
   text-align: center;
   padding: 20px;
   margin: 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

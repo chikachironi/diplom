@@ -36,7 +36,7 @@
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru"><header class="u-clearfix u-header u-sticky u-sticky-cf16 u-white u-header" id="sec-8218"><div class="u-clearfix u-sheet u-sheet-1">
         <img class="u-hidden-lg u-hidden-md u-hidden-sm u-hidden-xl u-image u-image-contain u-image-default u-image-1" src="images/logo_mini1.png?rand=6fe6" alt="" data-image-width="797" data-image-height="781">
-        <a href="#" class="u-hidden-xs u-image u-logo u-image-2" data-image-width="1807" data-image-height="738">
+        <a href="Главная.html" class="u-hidden-xs u-image u-logo u-image-2" data-image-width="1807" data-image-height="738">
           <img src="images/logo.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" data-responsive-from="XL">
@@ -245,7 +245,7 @@
           <br>
           <br>
           <br>
-          <button class="btn-press" onclick="result_T()">Рассчитать</button>
+          <button class="btn-press" onclick="T_result()">Рассчитать</button>
           <br>
           <br>
         </div>
@@ -302,9 +302,9 @@
           <input type="text" id="CEI1_specific_weight_of_material_costs" readonly="">
           <br>
           <br>
-          <label for="CEI2_кeturn_on_material_costs">Рентабельность материальных затрат:</label>
+          <label for="CEI2_return_on_material_costs">Рентабельность материальных затрат:</label>
           <br>
-          <input type="text" id="CEI2_кeturn_on_material_costs" readonly="">
+          <input type="text" id="CEI2_return_on_material_costs" readonly="">
           <br>
           <br>
           <label for="CEI3_share_of_labor_costs">Удельный вес затрат на оплату труда:</label>
@@ -364,26 +364,26 @@
           <script>
             function T_calculate() {
               // Получаем значения из полей ввода
-              let SD1_profit = document.getElementById("SD1_profit").value;
-              let SD2_assets = document.getElementById("SD2_assets").value;
-              let SD3_sales_revenue = document.getElementById("SD3_sales_revenue").value;
-              let SD40_average_cost_of_working_capital = document.getElementById("SD40_average_cost_of_working_capital").value;
-              let SD4_cost_of_manufactured_products = document.getElementById("SD4_cost_of_manufactured_products").value;
-              let SD5_total_hours_worked = document.getElementById("SD5_total_hours_worked").value;
-              let SD6_material_costs = document.getElementById("SD6_material_costs").value;
-              let SD7_total_cost = document.getElementById("SD7_total_cost").value;
-              let SD8_average_number_of_employees = document.getElementById("SD8_average_number_of_employees").value;
-              let SD9_number_of_people_who_resigned = document.getElementById("SD9_number_of_people_who_resigned").value;
-              let SD10_number_of_the_oppressed = document.getElementById("SD10_number_of_the_oppressed").value;
-              let SD11_wage_fund = document.getElementById("SD11_wage_fund").value;
-              let SD12_operating_expenses = document.getElementById("SD12_operating_expenses").value;
-              let SD13_investment_activity_expenses = document.getElementById("SD13_investment_activity_expenses").value;
-              let SD14_expenses_for_financial_activities = document.getElementById("SD14_expenses_for_financial_activities").value;
-              let SD15_number_of_regular_customers = document.getElementById("SD15_number_of_regular_customers").value;
-              let SD16_average_monthly_income_per_client = document.getElementById("SD16_average_monthly_income_per_client").value;
-              let SD17_income_from_current_activities = document.getElementById("SD17_income_from_current_activities").value;
-              let SD18_income_from_investment_activities = document.getElementById("SD18_income_from_investment_activities").value;
-              let SD19_income_from_financial_activities = document.getElementById("SD19_income_from_financial_activities").value;
+              let SD1_profit = Number(document.getElementById("SD1_profit").value);
+              let SD2_assets = Number(document.getElementById("SD2_assets").value);
+              let SD3_sales_revenue = Number(document.getElementById("SD3_sales_revenue").value);
+              let SD40_average_cost_of_working_capital = Number(document.getElementById("SD40_average_cost_of_working_capital").value);
+              let SD4_cost_of_manufactured_products = Number(document.getElementById("SD4_cost_of_manufactured_products").value);
+              let SD5_total_hours_worked = Number(document.getElementById("SD5_total_hours_worked").value);
+              let SD6_material_costs = Number(document.getElementById("SD6_material_costs").value);
+              let SD7_total_cost = Number(document.getElementById("SD7_total_cost").value);
+              let SD8_average_number_of_employees = Number(document.getElementById("SD8_average_number_of_employees").value);
+              let SD9_number_of_people_who_resigned = Number(document.getElementById("SD9_number_of_people_who_resigned").value);
+              let SD10_number_of_the_oppressed = Number(document.getElementById("SD10_number_of_the_oppressed").value);
+              let SD11_wage_fund = Number(document.getElementById("SD11_wage_fund").value);
+              let SD12_operating_expenses = Number(document.getElementById("SD12_operating_expenses").value);
+              let SD13_investment_activity_expenses = Number(document.getElementById("SD13_investment_activity_expenses").value);
+              let SD14_expenses_for_financial_activities = Number(document.getElementById("SD14_expenses_for_financial_activities").value);
+              let SD15_number_of_regular_customers = Number(document.getElementById("SD15_number_of_regular_customers").value);
+              let SD16_average_monthly_income_per_client = Number(document.getElementById("SD16_average_monthly_income_per_client").value);
+              let SD17_income_from_current_activities = Number(document.getElementById("SD17_income_from_current_activities").value);
+              let SD18_income_from_investment_activities = Number(document.getElementById("SD18_income_from_investment_activities").value);
+              let SD19_income_from_financial_activities = Number(document.getElementById("SD19_income_from_financial_activities").value);
         
               // Проверяем, что значения введены и являются числами //
               // Показатели эффективности ресурсов //
@@ -424,7 +424,7 @@
                 return;
               }
               if (isNaN(SD1_profit) || isNaN(SD6_material_costs)) {
-                document.getElementById("CEI2_кeturn_on_material_costs").value = "Ошибка ввода";
+                document.getElementById("CEI2_return_on_material_costs").value = "Ошибка ввода";
                 return;
               }
               if (isNaN(SD7_total_cost) || isNaN(SD11_wage_fund)) {
@@ -488,7 +488,7 @@
 
               // Показатель эффективности расходов 
               let CEI1_specific_weight_of_material_costs = SD6_material_costs / SD7_total_cost;
-              let CEI2_кeturn_on_material_costs = SD1_profit / SD6_material_costs;
+              let CEI2_return_on_material_costs = SD1_profit / SD6_material_costs;
               let CEI3_share_of_labor_costs = SD11_wage_fund / SD7_total_cost;
               let CEI4_profitability_of_wages = SD1_profit / SD11_wage_fund;
               let CEI5_expenses_for_other_current_activities = SD12_operating_expenses;
@@ -499,9 +499,9 @@
               let RPI1_sales_revenue = SD3_sales_revenue;
               let RPI2_profit = SD1_profit;
               let RPI3_regular_annual_revenue = SD15_number_of_regular_customers * SD16_average_monthly_income_per_client * 12;
-              let RPI4_income_from_current_activities = SD17_income_from_current_activities;
-              let RPI5_income_from_investment_activities = SD18_income_from_investment_activities;
-              let RPI6_income_from_financial_activities = SD19_income_from_financial_activities;
+              let RPI4_income_from_current_activities = SD17_income_from_current_activities/1;
+              let RPI5_income_from_investment_activities = SD18_income_from_investment_activities/1;
+              let RPI6_income_from_financial_activities = SD19_income_from_financial_activities/1;
         
               // Отображаем результат в поле вывода
               // Показатели эффективности ресурсов
@@ -517,10 +517,13 @@
 
               // Показатель эффективности расходов
               document.getElementById("CEI1_specific_weight_of_material_costs").value = CEI1_specific_weight_of_material_costs.toFixed(2); 
-              document.getElementById("CEI2_кeturn_on_material_costs").value = CEI2_кeturn_on_material_costs.toFixed(2); 
+              document.getElementById("CEI2_return_on_material_costs").value = CEI2_return_on_material_costs.toFixed(2); 
               document.getElementById("CEI3_share_of_labor_costs").value = CEI3_share_of_labor_costs.toFixed(2); 
               document.getElementById("CEI4_profitability_of_wages").value = CEI4_profitability_of_wages.toFixed(2); 
+             // console.log(CEI5_expenses_for_other_current_activities)
               document.getElementById("CEI5_expenses_for_other_current_activities").value = CEI5_expenses_for_other_current_activities.toFixed(2); 
+
+
               document.getElementById("CEI6_investment_activity_expenses").value = CEI6_investment_activity_expenses.toFixed(2); 
               document.getElementById("CEI7_expenses_for_financial_activities").value = CEI7_expenses_for_financial_activities.toFixed(2); 
 
@@ -560,7 +563,7 @@
             const CEI5 = Math.abs(parseFloat(document.getElementById('CEI5_expenses_for_other_current_activities').value));
             const CEI6 = Math.abs(parseFloat(document.getElementById('CEI6_investment_activity_expenses').value));
             const CEI7 = Math.abs(parseFloat(document.getElementById('CEI7_expenses_for_financial_activities').value));
-            const CEI2 = Math.abs(parseFloat(document.getElementById('CEI2_кeturn_on_material_costs').value));
+            const CEI2 = Math.abs(parseFloat(document.getElementById('CEI2_return_on_material_costs').value));
             const CEI4 = Math.abs(parseFloat(document.getElementById('CEI4_profitability_of_wages').value));
 
             // Вычисляем натуральные логарифмы
@@ -592,17 +595,43 @@
             const ln_RPI6 = Math.log(RPI6);
 
             // Рассчитываем итоговое значение
-            const result = ln_RPI1 * 0.2 + ln_RPI2 * 0.2 * ln_RPI4 * 0.2 + ln_RPI5 * 0.2 + ln_RPI6 * 0.2;
+            const result = (ln_RPI1 + ln_RPI2 + ln_RPI4 + ln_RPI5 + ln_RPI6) * 0.2;
 
             // Выводим результат
             document.getElementById('T3_result').innerText = '' + result.toFixed(4);
         }
 
-        function result_T() {
+          function TF_calculate(){
+            let TR = document.getElementById('T1_result').value;
+            let TE = document.getElementById('T2_result').value;
+            let TI = document.getElementById('T3_result').value;
+
+          // Вычисляем результат и округляем до 2 знаков
+           const result = (TR * 0.34 + TE * 0.33 + TI * 0.33).toFixed(2);
+
+           // Выводим результат в поле
+           document.getElementById('T_result').value = result;
+        }
+        
+        function T_result_show(){
+          let T_result = document.getElementById('T_result').value;
+          
+          const result_output = document.getElementById('T_output');
+          
+          if (T_result >= 1) {
+          result_output.textContent = "Положительный результат";
+            } else if (T_result < 1) {
+          result_output.textContent = "Отрицательный результат";
+            } 
+        }
+            
+        function T_result() {
             T_calculate();
             T1_calculate();
             T2_calculate();
             T3_calculate();
+            TF_calculate();
+            T_result_show();
         }
           </script>
         </div>
@@ -637,38 +666,26 @@
         <div class="u-border-3 u-border-white u-container-style u-custom-color-4 u-group u-radius u-shape-round u-group-1">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
             <div class="u-clearfix u-custom-html u-custom-html-2">
-              <style></style>
-              <input class="prom_results" type="text" id="T1_result" placeholder="ТПЭ_р1">
+              <input class="prom_results" type="text" id="T1_result" readonly="" placeholder="ТПЭ_р1">
             </div>
           </div>
         </div>
         <div class="custom-expanded u-clearfix u-custom-html u-custom-html-3">
-          <div class="result_output" id="T_output"></div>
-          <script>
-            let T_result = document.getElementById('T_result').value;
-        
-            const result_outputDiv = document.getElementById('T_output');
-        
-            if (T_result >= 1) {
-              result_outputDiv.textContent = "Положительный результат";
-            } else if (T_result < 1) {
-              result_outputDiv.textContent = "Отрицательный результат";
-            } 
-          </script>
+          <div class="result_output">
+            <input class="f_prom_results" type="text" id="T_output" readonly="" placeholder="Узнать рузультат анализа">
+          </div>
         </div>
         <div class="u-border-3 u-border-white u-container-style u-custom-color-4 u-group u-radius u-shape-round u-group-2">
           <div class="u-container-layout u-valign-middle u-container-layout-2">
             <div class="u-clearfix u-custom-html u-custom-html-4">
-              <style></style>
-              <input class="prom_results" type="text" id="T2_result" placeholder="ТПЭ_р2">
+              <input class="prom_results" type="text" id="T2_result" readonly="" placeholder="ТПЭ_р2">
             </div>
           </div>
         </div>
         <div class="u-border-3 u-border-white u-container-style u-custom-color-4 u-group u-radius u-shape-round u-group-3">
           <div class="u-container-layout u-valign-middle u-container-layout-3">
             <div class="u-clearfix u-custom-html u-custom-html-5">
-              <style></style>
-              <input class="prom_results" type="text" id="T3_result" placeholder="ТПЭ_д3">
+              <input class="prom_results" type="text" id="T3_result" readonly="" placeholder="ТПЭ_д3">
             </div>
           </div>
         </div>
@@ -798,7 +815,7 @@
           <input type="number" id="ESD20_online_sales">
           <br>
           <br>
-          <button class="btn-press" onclick="E_calculate()">Рассчитать</button>
+          <button class="btn-press" onclick="E_result()">Рассчитать</button>
           <br>
           <br>
         </div>
@@ -1085,7 +1102,7 @@
             const result = ln_ER1 * 0.2 + ln_ER3 * 0.2 + ln_ER4 * 0.2 + ln_ER5 * 0.2 + ln_ER6 * 0.2;
 
             // Выводим результат
-            document.getElementById('E1_result').innerText = '' + result.toFixed(4);
+            document.getElementById('E1_result').innerText = result.toFixed(4);
         }
 
         function E2_calculate() {
@@ -1107,28 +1124,28 @@
             const result = (ln_EE3 * 0.2 + ln_EE5 * 0.2 * ln_EE6 * 0.2) / (ln_EE1 * 0.2 + ln_EE2 * 0.2);
 
             // Выводим результат
-            document.getElementById('E2_result').innerText = '' + result.toFixed(4);
+            document.getElementById('E2_result').innerText = result.toFixed(4);
         }
         function E3_calculate() {
-            // Получаем значения из полей ввода
-            const EI5 = Math.abs(parseFloat(document.getElementById('EI5_Share_of_profit_from_online_sales').value));
-            const EI3 = Math.abs(parseFloat(document.getElementById('EI3_CRI').value));
-            const EI8 = Math.abs(parseFloat(document.getElementById('EI8_revenue').value));
-            const EI1 = Math.abs(parseFloat(document.getElementById('EI1_Average_online_purchase_check').value));
-            const EI6 = Math.abs(parseFloat(document.getElementById('EI6_LTV').value));
+          // Получаем значения из полей ввода
+          const EI5 = Math.abs(parseFloat(document.getElementById('EI5_Share_of_profit_from_online_sales').value));
+          const EI3 = Math.abs(parseFloat(document.getElementById('EI3_CRI').value));
+          const EI8 = Math.abs(parseFloat(document.getElementById('EI8_revenue').value));
+          const EI1 = Math.abs(parseFloat(document.getElementById('EI1_Average_online_purchase_check').value));
+          const EI6 = Math.abs(parseFloat(document.getElementById('EI6_LTV').value));
 
-            // Вычисляем натуральные логарифмы
-            const ln_EI5 = Math.log(EI5);
-            const ln_EI3 = Math.log(EI3);
-            const ln_EI8 = Math.log(EI8);
-            const ln_EI1 = Math.log(EI1);
-            const ln_EI6 = Math.log(EI6);
+          // Вычисляем натуральные логарифмы
+          const ln_EI5 = Math.log(EI5);
+          const ln_EI3 = Math.log(EI3);
+          const ln_EI8 = Math.log(EI8);
+          const ln_EI1 = Math.log(EI1);
+          const ln_EI6 = Math.log(EI6);
 
-            // Рассчитываем итоговое значение
-            const result = ln_EI5 * 0.2 + ln_EI3 * 0.2 * ln_EI8 * 0.2 + ln_EI1 * 0.2 + ln_EI6 * 0.2;
+          // Рассчитываем итоговое значение
+          const result = ln_EI5 * 0.2 + ln_EI3 * 0.2 * ln_EI8 * 0.2 + ln_EI1 * 0.2 + ln_EI6 * 0.2;
 
-            // Выводим результат
-            document.getElementById('E3_result').innerText = '' + result.toFixed(4);
+          // Выводим результат
+          document.getElementById('E3_result').innerText = result.toFixed(4);
         }
 
         function EF_calculate(){
@@ -1143,14 +1160,26 @@
            document.getElementById('E_result').value = result;
         }
 
-            function E_result() {
-                E_calculate();
-                E1_calculate();
-                E2_calculate();
-                E3_calculate();
-                EF_calculate();
-            }
+        function E_result_show(){
+          let E_result = parseFloat(document.getElementById('E_result').value);
+          
+          const result_output = document.getElementById('E_output');
+          
+          if (E_result >= 1) {
+          result_output.textContent = "Положительный результат";
+            } else if (E_result < 1) {
+          result_output.textContent = "Отрицательный результат";
+            } 
+        }
 
+        function E_result() {
+          E_calculate();
+          E1_calculate();
+          E2_calculate();
+          E3_calculate();
+          EF_calculate();
+          E_result_show();
+        }
           </script>
         </div>
         <h3 class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-2">Перейде​м к результатам</h3>
@@ -1184,35 +1213,26 @@
         <div class="u-border-3 u-border-white u-container-style u-custom-color-4 u-group u-radius u-shape-round u-group-1">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
             <div class="u-clearfix u-custom-html u-custom-html-2">
-              <input class="prom_results" type="text" id="E1_result" placeholder="ЭПЭ_р1">
+              <input class="prom_results" type="text" id="E1_result" readonly="" placeholder="ЭПЭ_р1">
             </div>
           </div>
         </div>
         <div class="custom-expanded u-clearfix u-custom-html u-custom-html-3">
-          <div class="result_output" id="E_output"></div>
-          <script>
-            let E_result = document.getElementById('E_result').value;
-        
-            const E_outputDiv = document.getElementById('E_output');
-        
-            if (E_result >= 1) {
-              E_outputDiv.textContent = "Ваше значение больше 1";
-            } else if (E_result < 1) {
-              E_outputDiv.textContent = "Ваше значение меньше 1";
-            } 
-          </script>
+          <div class="result_output">
+            <input class="f_prom_results" type="text" id="E_output" readonly="" placeholder="Узнать результат анализа">
+          </div>
         </div>
         <div class="u-border-3 u-border-white u-container-style u-custom-color-4 u-group u-radius u-shape-round u-group-2">
           <div class="u-container-layout u-valign-middle u-container-layout-2">
             <div class="u-clearfix u-custom-html u-custom-html-4">
-              <input class="prom_results" type="text" id="E2_result" placeholder="ЭПЭ_р1">
+              <input class="prom_results" type="text" id="E2_result" readonly="" placeholder="ЭПЭ_р2">
             </div>
           </div>
         </div>
         <div class="u-border-3 u-border-white u-container-style u-custom-color-4 u-group u-radius u-shape-round u-group-3">
           <div class="u-container-layout u-valign-middle u-container-layout-3">
             <div class="u-clearfix u-custom-html u-custom-html-5">
-              <input class="prom_results" type="text" id="E3_result" placeholder="ЭПЭ_р1">
+              <input class="prom_results" type="text" id="E3_result" readonly="" placeholder="ЭПЭ_р3">
             </div>
           </div>
         </div>
